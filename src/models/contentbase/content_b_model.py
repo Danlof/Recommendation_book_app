@@ -10,7 +10,7 @@ SIM_MATRIX = '/media/danlof/dan files/data_science_codes/Recommender_project/boo
 books_df = pd.read_csv(FILTERD_BOOKS)
 sim_matrix = joblib.load(SIM_MATRIX)
 
-def get_top_n_books():
+def get_top_n_books(n):
     """This function returns the top n popular books recommended """
     df = books_df.sort_values(by=['Rating_count','Avg_rating'],ascending=False).head(n)
     return df
